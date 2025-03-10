@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+          :root {
+            --primary-color: #f0f;
+            --secondary-color: #0f0;
+            --tertiary-color: #00f;
+            --dark-color: #000;
+          }
+
+          .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border: thin solid var(--dark-color);
+          }
+
+          .card {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            background-color: var(--primary-color);
+          }
+
+          .card figcaption {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+          }
+
+          .opacity-80 {
+            opacity: 0.8;
+          }
+
+          .opacity-60 {
+            opacity: 0.6;
+          }
+
+          .sepia {
+            filter: sepia(1);
+          }
+          <!---->
+          <!-- .events-flows div { -->
+          <!--   text-align: center; -->
+          <!--   font-size: 2rem; -->
+          <!--   padding: 30px; -->
+          <!--   border: 1px solid var(--dark-color); -->
+          <!-- } -->
+          <!---->
+          <!-- .one { -->
+          <!--   background-color: var(--primary-color); -->
+          <!--   color: var(--dark-color); -->
+          <!-- } -->
+          <!-- .two { -->
+          <!--   background-color: var(--secondary-color); -->
+          <!--   color: var(--dark-color); -->
+          <!-- } -->
+          <!-- .three { -->
+          <!--   background-color: var(--tertiary-color); -->
+          <!--   color: var(--dark-color); -->
+          <!-- } -->
+
+        .event-flow div{
+          text-align: center;
+          font-size: 2rem;
+          padding: 4rem;
+          border: 1px solid var(--dark-color);
+        }
+
+        .one{
+          background-color: var(--primary-color);
+          color: var(--dark-color);
+        }
+        .two {
+          background-color: var(--secondary-color);
+          color: var(--dark-color);
+        }
+      .three {
+        background-color: var(--tertiary-color);
+        color: var(--dark-color);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">class with style</h1>
+    <h2 class="subtitle">DOM Manipulation</h2>
+    <p class="paragrah" id="paragrah">
+      lorem ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Eaque recusandae, rem eius aut nisi, quasi consequuntur accusantium, velit
+      eum libero aliquam earum iure? Itaque suscipit debitis dolore accusantium
+      nulla dolorem?
+    </p>
+    <nav id="menu">
+      <ul>
+        <li><a href="">Section 1</a></li>
+        <li><a href="">Section 2</a></li>
+        <li><a href="">Section 3</a></li>
+        <li><a href="">Section 4</a></li>
+        <li><a href="">Section 5</a></li>
+      </ul>
+    </nav>
+    <input type="text" name="name" placeholder="give me u name..." id="name" />
+    <a
+      class="link-web"
+      data-description="Document Object Model"
+      data-id="1"
+      href="web.html"
+      style="background-color: red; color: white"
+      >web main</a
+    >
+    <section class="cards">
+      <figure class="card">
+        <img src="https://picsum.photos/id/2/200/200 " alt="tech" />
+        <figcaption>Tech</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://picsum.photos/id/237/200/200 " alt="animals" />
+        <figcaption>animals</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://picsum.photos/id/274/200/200 " alt="people" />
+        <figcaption>people</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://picsum.photos/id/290/200/200 " alt="arch" />
+        <figcaption>arch</figcaption>
+      </figure>
+      <figure class="card">
+        <img src="https://picsum.photos/id/353/200/200 " alt="nature" />
+        <figcaption>nature</figcaption>
+      </figure>
+    </section>
+    <template id="template-card">
+      <figure class="card">
+        <img />
+        <figcaption></figcaption>
+      </figure>
+    </template>
+    <h2>Eventos en Javascript</h2>
+    <h3>Manejadores de eventos</h3>
+    <button onclick="console.log('ey me has presionado')">
+      evento con atributo html
+    </button>
+    <hr />
+    <button id="btn-semantic-handler">semantic event handler</button>
+    <hr />
+    <button id="btn-multiple-events">multiple event handler</button>
+    <hr />
+    <h3></h3>
+    <!-- <section class="events-flows"> -->
+    <!--   <div class="one"> -->
+    <!--     1 -->
+    <!--     <div class="two"> -->
+    <!--       2 -->
+    <!--       <div class="three">3</div> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </section> -->
+    <section class="event-flow">
+      <div class="one">
+        1
+        <div class="two">
+          2
+          <div class="three">3</div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <br />
+    <button id="open-window">Open Window</button>
+    <br />
+    <br />
+    <button id="close-window">Close Window</button>
+    <br />
+    <br />
+    <button id="print-window">Printer window</button>
+    <script src="./styles_values.js"></script>
+  </body>
+</html>

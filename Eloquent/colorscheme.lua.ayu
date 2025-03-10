@@ -1,0 +1,120 @@
+-- ~/.config/nvim/lua/colorscheme.lua
+local function setup_ayu(variant)
+	local palette = {
+		mirage = {
+			bg = "#1F2430",
+			fg = "#CBCCC6",
+			comment = "#5C6773",
+			keyword = "#FFA759",
+			func = "#FFD580",
+			string = "#BAE67E",
+			type = "#73D0FF",
+			constant = "#FFEE99",
+			special = "#FFE6B3",
+			error = "#FF3333",
+			tag = "#39BAE6",
+			ui = "#707A8C",
+		},
+		dark = {
+			bg = "#0A0E14",
+			fg = "#B3B1AD",
+			comment = "#626A73",
+			keyword = "#FF8F40",
+			func = "#FFB454",
+			string = "#AAD94C",
+			type = "#59C2FF",
+			constant = "#FFEE99",
+			special = "#E6B450",
+			error = "#FF3333",
+			tag = "#39BAE6",
+			ui = "#4D5566",
+		},
+		light = {
+			bg = "#FAFAFA",
+			fg = "#575F66",
+			comment = "#ABB0B6",
+			keyword = "#F29718",
+			func = "#F2AE49",
+			string = "#86B300",
+			type = "#399EE6",
+			constant = "#A37ACC",
+			special = "#E6B673",
+			error = "#FF3333",
+			tag = "#55B4D4",
+			ui = "#8A9199",
+		},
+	}
+
+	local colors = palette[variant] or palette.mirage
+	local transparent = "NONE"
+
+	-- Base UI
+	vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg, bg = transparent })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = transparent })
+	vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.ui, bg = transparent })
+	vim.api.nvim_set_hl(0, "VertSplit", { fg = colors.ui, bg = transparent })
+
+	-- Syntax enhancements
+	vim.api.nvim_set_hl(0, "Comment", { fg = colors.comment, italic = true })
+	vim.api.nvim_set_hl(0, "Keyword", { fg = colors.keyword, bold = true })
+	vim.api.nvim_set_hl(0, "Function", { fg = colors.func })
+	vim.api.nvim_set_hl(0, "String", { fg = colors.string })
+	vim.api.nvim_set_hl(0, "Type", { fg = colors.type })
+	vim.api.nvim_set_hl(0, "Constant", { fg = colors.constant })
+	vim.api.nvim_set_hl(0, "Tag", { fg = colors.tag })
+	vim.api.nvim_set_hl(0, "Special", { fg = colors.special })
+
+	-- Vibrant additions
+	vim.api.nvim_set_hl(0, "MatchParen", { bg = "#33415E", bold = true })
+	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2A303C" }) -- Slight contrast
+	vim.api.nvim_set_hl(0, "Pmenu", { bg = "#252936", fg = colors.fg })
+	vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#394353", bold = true })
+	vim.api.nvim_set_hl(0, "Visual", { bg = "#343F4C" })
+
+	-- Diagnostic styles with Ayu flair
+	vim.api.nvim_set_hl(0, "DiagnosticError", { fg = colors.error })
+	vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = colors.special })
+	vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = colors.type })
+	vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = colors.string })
+	vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = colors.error })
+
+	-- Git decorations
+	vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#283E2D", fg = colors.string })
+	vim.api.nvim_set_hl(0, "DiffChange", { bg = "#273842", fg = colors.type })
+	vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#3A2A32", fg = colors.error })
+
+	-- Statusline accents
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = transparent, fg = colors.ui })
+	vim.api.nvim_set_hl(0, "StatusLineNC", { bg = transparent, fg = colors.comment })
+	vim.api.nvim_set_hl(0, "ModeMsg", { fg = colors.tag, bold = true })
+
+	-- Rainbow parentheses
+	local rainbow_colors = {
+		colors.func,
+		colors.string,
+		colors.type,
+		colors.constant,
+		colors.tag,
+	}
+	for i, color in ipairs(rainbow_colors) do
+		vim.api.nvim_set_hl(0, "rainbowcol" .. i, { fg = color })
+	end
+
+	vim.opt.termguicolors = true
+	vim.opt.background = variant == "light" and "light" or "dark"
+end
+
+return {
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = function()
+				-- Choose your variant: 'mirage', 'dark', or 'light'
+				setup_ayu("dark")
+
+				-- Optional: Add subtle background texture
+				-- vim.api.nvim_set_hl(0, 'Normal', { fg = colors.fg, bg = transparent, blend = 5 })
+			end,
+		},
+	},
+}

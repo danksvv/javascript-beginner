@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*position: relative;*/
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.title {
+  top: 0;
+  position: sticky;
+  font-weight: 700;
+  background-color: #fddb19;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*height: 100vh;*/
+}
+
+.container section {
+  height: 100vh;
+  font-size: 1.5rem;
+  font-weight: 550;
+  padding-top: 4.5rem;
+  text-align: center;
+}
+
+.btn--hamburger {
+  position: fixed;
+  bottom: 1vh;
+  right: 1vw;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.container-hidden {
+  /*display: none;*/
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+
+  position: fixed;
+  /*top: 0;*/
+  /*bottom: 0;*/
+  /*right: 0;*/
+  /*left: 0;*/
+  inset: 0;
+  width: 100%;
+  background-color: #00000050;
+}
+
+.container-hidden.is-active {
+  /*display: block;*/
+  transform: translateX(0);
+}
+
+.menu {
+  /*margin-top: 20%;*/
+  /*margin-bottom: 20%;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: inherit;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.menu a {
+  width: inherit;
+  font-size: 2rem;
+  font-weight: 560;
+  padding: 4rem 0;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+.menu a:hover {
+  background-color: #fbff00;
+  color: #585858;
+}
+
+/* Clock and alarm*/
+
+/*  display: block;*/
+/*  text-align: center;*/
+/*}*/
+
+/*.section1 h2 {*/
+/*  padding: 1rem;*/
+/*  margin-bottom: 1rem;*/
+/*}*/

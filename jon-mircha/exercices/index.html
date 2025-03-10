@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./hamburgers.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+      integrity="sha512-+mlclc5Q/eHs49oIOCxnnENudJWuNqX5AogCiqRBgKnpoplPzETg2fkgBFVC6WYUVxYYljuxPNG8RE7yBy1K+g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Exercices and practices with JS</title>
+  </head>
+  <body>
+    <h1 class="title">Exercices with DOM</h1>
+    <button
+      class="btn--hamburger hamburger hamburger--spin"
+      id="btn-hamburger"
+      type="button"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <aside class="container-hidden" id="is-open">
+      <nav class="menu">
+        <a id="menu-section1" href="#section1">section 1</a>
+        <a id="menu-section2" href="#section2">section 2</a>
+        <a id="menu-section3" href="#section3">section 3</a>
+        <a id="menu-section1" href="#section4">section 4</a>
+        <a id="menu-section5" href="#section5">section 5</a>
+      </nav>
+    </aside>
+    <div class="container">
+      <section id="section1" class="section1">
+        <h2>section 1</h2>
+        <br />
+        <br />
+        <h3 class="subtitle">Digital Clock and Alarm Customization</h3>
+      </section>
+      <section id="section2" class="section2">section 2</section>
+      <section id="section3" class="section3">section 3</section>
+      <section id="section4" class="section4">section 4</section>
+      <section id="section5" class="section5">section 5</section>
+    </div>
+    <!-- <script src="./script.js"></script> -->
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
